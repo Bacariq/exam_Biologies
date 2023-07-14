@@ -30,9 +30,8 @@ class BloggiesFragment : Fragment() {
             val login = _binding.BloggiesLogin.text.toString()
             val isValid = checkCnx.checkCredentialsBloggies(email, login, password, password2)
             if(isValid == true){
-                // je ne sais pas pourquoi il ne trouve pas mon fragment direction
-                //val action = BloggiesFragmentDirections.actionBloggiesFragmentToConnectedFragment(Origine = "Bloggies", message = "Bonjour " + login + " !")
-                //findNavController().navigate(action)
+                val action = BloggiesFragmentDirections.actionBloggiesFragmentToConnectedFragment(origine = "Bloggies", message = "Bonjour " + login + " !")
+                findNavController().navigate(action)
             }
         }
         return _binding.root

@@ -29,8 +29,8 @@ class TwitterFragment : Fragment() {
             val password = _binding.TwitterPsw.text.toString()
             val isValid = checkCnx.checkCredentials(email, password)
             if(isValid == true){
-                //val action = TwitterFragmentDirections.actionFirstFragmentToSecondFragment(origine = "Twitter", message = "Félicitation vous êtes connecté!")
-                //findNavController().navigate(action)
+                val action = TwitterFragmentDirections.actionTwitterFragmentToConnectedFragment(origine = "Twitter", message = "Félicitation vous êtes connecté!")
+                findNavController().navigate(action)
             }
         }
         return _binding.root

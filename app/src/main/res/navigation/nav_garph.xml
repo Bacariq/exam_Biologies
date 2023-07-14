@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_nav"
+    android:id="@+id/nav_garph"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -11,16 +11,23 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_faceBookFragment"
-            app:destination="@id/faceBookFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"/>
-        <action
             android:id="@+id/action_homeFragment_to_twitterFragment"
             app:destination="@id/twitterFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_faceBookFragment"
+            app:destination="@id/faceBookFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_bloggiesFragment"
             app:destination="@id/bloggiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloggiesFragment"
+        android:name="com.example.exam_biologies.Fragment.BloggiesFragment"
+        android:label="fragment_bloggies"
+        tools:layout="@layout/fragment_bloggies" >
+        <action
+            android:id="@+id/action_bloggiesFragment_to_connectedFragment"
+            app:destination="@id/connectedFragment" />
     </fragment>
     <fragment
         android:id="@+id/faceBookFragment"
@@ -41,15 +48,6 @@
             app:destination="@id/connectedFragment" />
     </fragment>
     <fragment
-        android:id="@+id/bloggiesFragment"
-        android:name="com.example.exam_biologies.Fragment.BloggiesFragment"
-        android:label="fragment_bloggies"
-        tools:layout="@layout/fragment_bloggies" >
-        <action
-            android:id="@+id/action_bloggiesFragment_to_connectedFragment"
-            app:destination="@id/connectedFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/connectedFragment"
         android:name="com.example.exam_biologies.Fragment.ConnectedFragment"
         android:label="fragment_connected"
@@ -57,7 +55,8 @@
         <argument
             android:name="origine"
             app:argType="string" />
-        <argument android:name="message"
+        <argument
+            android:name="message"
             app:argType="string" />
     </fragment>
 </navigation>

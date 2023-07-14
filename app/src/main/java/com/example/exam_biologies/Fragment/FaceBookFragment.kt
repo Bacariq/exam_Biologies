@@ -26,8 +26,8 @@ class FaceBookFragment : Fragment() {
             val password = _binding.FaceBookPsw.text.toString()
             val isValid = checkCnx.checkCredentials(email, password)
             if(isValid == true){
-                //val action = FaceBookFragmentDirections.actionFirstFragmentToSecondFragment(origine = "FaceBook", message = "Félicitation vous êtes connecté!")
-                //findNavController().navigate(action)
+                val action = FaceBookFragmentDirections.actionFaceBookFragmentToConnectedFragment(origine = "FaceBook", message = "Félicitation vous êtes connecté!")
+                findNavController().navigate(action)
             }
         }
         return _binding.root
